@@ -8,6 +8,8 @@
         width: 80%;
         margin-left: auto;
         margin-right: auto;
+        /* Solo para modo prueba */
+        background-color: lightgrey;
       }
 /* Cabecera */
       .header {
@@ -30,12 +32,18 @@
         width: 130px;
         height: 130px;
         margin: 0px;
+        /* Solo para modo prueba */
+        background-color: orange;
+        z-index: 2;
       }
       .titulo {
         position: relative;
         padding: 0;
         top: -160px;
         font: 400 80px 'Indie Flower', cursive;
+        /* Solo para modo prueba */
+        z-index: 1;
+        background-color: cyan;
       }
 /* Contenedor de columnas */
       .main {
@@ -48,8 +56,9 @@
   /* Botones */
       .capsulabtn {
         margin: 1px 15px 0px 10px;
-        background: white;
         height: 50px;
+        /* Solo para modo prueba */
+        background: white;
       }
       .boton {
         position: relative;
@@ -57,7 +66,6 @@
         margin-right: 20px;
         top: 3.5px;
         height: 22px;
-        background: green;
         text-align: center;
         padding: 10px;
         z-index: 1;
@@ -81,10 +89,12 @@
       }
       .left, .right {
         width: 25%;
+        /* Solo para modo prueba */
         background-color: red;
       }
       .middle {
         width: 50%;
+        /* Solo para modo prueba */
         background: yellow;
       }
       .main:after {
@@ -95,46 +105,53 @@
         clear: both;
         margin-top: 5px;
         margin-bottom: 5px;
-        width: 100%;
+        /*width: 100%;*/
+        /* Solo para modo prueba */
         background: lightblue;
       }
       .capsulapost a {
         color: black;
         text-decoration: none;
+        background-color: blue;
       }
       .fechanoticia {
-        width: 100%;
         font-size: 2em;
-        background: lightgreen;
+        width: 100%;
         /* Si escribo display inline, el contenedor .capsulapost aplica sus margenes
         correctamente, pero todo lo demás se descuadra */
         display: inline;
+        /* Solo para modo prueba */
+        background: lightgreen;
       }
       .imgpost {
         float: right;
-        margin: 5px 5px 5px 5px;
-        width: 50%;
-        height: 45%;
+        margin: 5px 5% 5px 5%;
+        width: 90%;
         box-shadow: 9px 11px 5px -5px rgba(0,0,0,0.75);
       }
       .titulopost { /* Enlace a noticia */
         font-size: 1.5em;
-        margin-top: 150px;
+        display: block;
       }
       .titulopost:hover {
         color: blue;
+        /* Solo para modo prueba */
+        color: yellow;
       }
       .leyenda {
         font-size: 0.9em;
-        clear: both;
-        text-align: right;
       }
       p.leyenda {
-        position: relative;
-
+        display: inline;
       }
-      .leyenda > a:hover {
+      .leyenda ~ a {
+        float: right;
+      }
+      .leyenda > a:hover, .leyenda ~ a:hover {
         color:grey;
+      }
+      .clear {
+        clear: both;
       }
 /* Pie de página */
       .footer {
@@ -144,7 +161,6 @@
         margin-top: 20px;
       }
     </style>
-
     <meta charset="utf-8">
     <title>Práctica final de módulo</title>
   </head>
@@ -179,11 +195,19 @@
         </div>
         <div class="middle column">
           <div class="capsulapost">
-            <p class="fechanoticia">Noticia de hoy</p>
-            <img class="imgpost" src="IMG/imgpost1.jpg" alt="Aula de universidad">
-            <a class="titulopost" href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el WiFi de la universidad porque profesores se quejaban que las aplicaciones de clase no iban bien.</a>
-            <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
-            <p class="leyenda"><a href="#inicio">[&#8679; Arriba]</a></p>
+            <div class="">
+              <p class="fechanoticia">Noticia de hoy</p>
+            </div>
+            <div class="middle column">
+              <a class="titulopost" href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el WiFi de la universidad porque profesores se quejaban que las aplicaciones de clase no iban bien.</a>
+            </div>
+            <div class="middle column">
+              <img class="imgpost" src="IMG/imgpost1.jpg" alt="Aula de universidad">
+            </div>
+            <div class="clear">
+              <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
+              <a href="#inicio">[&#8679; Arriba]</a>
+            </div>
           </div>
         </div>
         <div class="right column">
