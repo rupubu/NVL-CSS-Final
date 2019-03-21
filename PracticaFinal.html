@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <style media="screen">
+      body {
+        width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+/* Cabecera */
+      .header {
+        padding: 5px;
+        text-align: right;
+        margin-top: 72px;
+        left: 0px;
+        margin-bottom: 40px;
+        height: 5px;
+        overflow: visible;
+        box-shadow: 9px 11px 5px -5px rgba(0,0,0,0.75);
+        background: linear-gradient(to right, rgba(204,0,0,0.17) 0%,rgba(204,0,0,0.48) 100%);
+        border-radius: 200px 45px 200px 45px;
+      }
+      .logo {
+        float: left;
+        position: relative;
+        top: -75px;
+        left: 0px;
+        width: 130px;
+        height: 130px;
+        margin: 0px;
+      }
+      .titulo {
+        position: relative;
+        padding: 0;
+        top: -160px;
+        font: 400 80px 'Indie Flower', cursive;
+      }
+/* Contenedor de columnas */
+      .main {
+        clear: both; /* Me lio bastante con esto: Clear: both - position: relative y absolute */
+        position: relative;
+        top: -80px;
+        font-family: 'Patrick Hand', cursive;
+      }
+/* Panel izquierdo */
+  /* Botones */
+      .capsulabtn {
+        margin: 1px 15px 0px 10px;
+        background: white;
+        height: 50px;
+      }
+      .boton {
+        position: relative;
+        margin-left: auto;
+        margin-right: 20px;
+        top: 3.5px;
+        height: 22px;
+        background: green;
+        text-align: center;
+        padding: 10px;
+        z-index: 1;
+        background: linear-gradient(to right, rgba(204,0,0,0.17) 0%,rgba(204,0,0,0.48) 100%);
+        border-radius: 200px 0px 0px 200px;
+      }
+      .imgbotones {
+        position: relative;
+        float: right;
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+        clear: right;
+      }
+      .capsulabtn:after {
+        clear: both;
+      }
+/* Cuerpo de 3 columnas 25% 50% 25% */
+      .column {
+        float: left;
+      }
+      .left, .right {
+        width: 25%;
+        background-color: red;
+      }
+      .middle {
+        width: 50%;
+        background: yellow;
+      }
+      .main:after {
+        clear: both;
+      }
+/* Estilo de Post */
+      .capsulapost {
+        clear: both;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        width: 100%;
+        background: lightblue;
+      }
+      .capsulapost a {
+        color: black;
+        text-decoration: none;
+      }
+      .fechanoticia {
+        width: 100%;
+        font-size: 2em;
+        background: lightgreen;
+        /* Si escribo display inline, el contenedor .capsulapost aplica sus margenes
+        correctamente, pero todo lo demás se descuadra */
+        display: inline;
+      }
+      .imgpost {
+        float: right;
+        margin: 5px 5px 5px 5px;
+        width: 50%;
+        height: 45%;
+        box-shadow: 9px 11px 5px -5px rgba(0,0,0,0.75);
+      }
+      .titulopost { /* Enlace a noticia */
+        font-size: 1.5em;
+        margin-top: 150px;
+      }
+      .titulopost:hover {
+        color: blue;
+      }
+      .leyenda {
+        font-size: 0.9em;
+        clear: both;
+        text-align: right;
+      }
+      p.leyenda {
+        position: relative;
+
+      }
+      .leyenda > a:hover {
+        color:grey;
+      }
+/* Pie de página */
+      .footer {
+        clear: both;
+        text-align: center;
+        background: white;
+        margin-top: 20px;
+      }
+    </style>
+
+    <meta charset="utf-8">
+    <title>Práctica final de módulo</title>
+  </head>
+  <body>
+      <a name="inicio"></a>
+      <div class="header">
+        <img class="logo" src="IMG/logo.png" alt="Logo">
+        <p class="titulo"><b>Blog de prueba</b></p>
+      </div>
+      <div class="main">
+        <div class="left column">
+            <div class="capsulabtn">
+              <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
+              <div class="boton">ENLACE
+              </div>
+            </div>
+            <div class="capsulabtn">
+              <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
+              <div class="boton">ENLACE
+              </div>
+            </div>
+            <div class="capsulabtn">
+              <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
+              <div class="boton">ENLACE
+              </div>
+            </div>
+            <div class="capsulabtn">
+              <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
+              <div class="boton">ENLACE
+              </div>
+            </div>
+        </div>
+        <div class="middle column">
+          <div class="capsulapost">
+            <p class="fechanoticia">Noticia de hoy</p>
+            <img class="imgpost" src="IMG/imgpost1.jpg" alt="Aula de universidad">
+            <a class="titulopost" href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el WiFi de la universidad porque profesores se quejaban que las aplicaciones de clase no iban bien.</a>
+            <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
+            <p class="leyenda"><a href="#inicio">[&#8679; Arriba]</a></p>
+          </div>
+        </div>
+        <div class="right column">
+          <div class="modulo">
+            LATERAL 2
+          </div>
+        </div>
+      </div>
+
+      <div class="footer">
+        <p>RPB &copy; Práctica final - Pre-Work &reg;</p>
+      </div>
+  </body>
+</html>
