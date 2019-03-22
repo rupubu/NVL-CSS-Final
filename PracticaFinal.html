@@ -3,13 +3,15 @@
   <head>
     <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Clicker+Script" rel="stylesheet">
     <style media="screen">
       body {
         width: 80%;
         margin-left: auto;
         margin-right: auto;
-        /* Solo para modo prueba */
-        background-color: lightgrey;
+        /* Solo para modo prueba
+        background-color: lightgrey;*/
       }
 /* Cabecera */
       .header {
@@ -32,24 +34,23 @@
         width: 130px;
         height: 130px;
         margin: 0px;
-        /* Solo para modo prueba */
+        /* Solo para modo prueba
         background-color: orange;
-        z-index: 2;
+        z-index: 2;*/
       }
       .titulo {
         position: relative;
         padding: 0;
         top: -160px;
         font: 400 80px 'Indie Flower', cursive;
-        /* Solo para modo prueba */
+        /* Solo para modo prueba
         z-index: 1;
-        background-color: cyan;
+        background-color: cyan;*/
       }
 /* Contenedor de columnas */
       .main {
-        clear: both; /* Me lio bastante con esto: Clear: both - position: relative y absolute */
         position: relative;
-        top: -80px;
+        top: -70px;
         font-family: 'Patrick Hand', cursive;
       }
 /* Panel izquierdo */
@@ -57,20 +58,31 @@
       .capsulabtn {
         margin: 1px 15px 0px 10px;
         height: 50px;
-        /* Solo para modo prueba */
-        background: white;
+        /* Solo para modo prueba
+        background: white;*/
       }
       .boton {
         position: relative;
         margin-left: auto;
         margin-right: 20px;
         top: 3.5px;
-        height: 22px;
-        text-align: center;
-        padding: 10px;
+        height: 27px;
+        text-align: right;
+        padding: 5px 0px 10px 10px;
         z-index: 1;
-        background: linear-gradient(to right, rgba(204,0,0,0.17) 0%,rgba(204,0,0,0.48) 100%);
+        background: linear-gradient(to right, rgba(204,0,0,0) 0%,rgba(204,0,0,1) 100%);
         border-radius: 200px 0px 0px 200px;
+      }
+      .boton:hover {
+        background: linear-gradient(to right, rgba(204,0,0,0.17) 0%,rgba(204,0,0,0.48) 100%);
+      }
+      .boton > a {
+        text-decoration: none;
+        color: black;
+        font-size: 22px;
+      }
+      .boton > a:hover {
+        font-weight: bold;
       }
       .imgbotones {
         position: relative;
@@ -78,10 +90,6 @@
         width: 50px;
         height: 50px;
         z-index: 2;
-        clear: right;
-      }
-      .capsulabtn:after {
-        clear: both;
       }
 /* Cuerpo de 3 columnas 25% 50% 25% */
       .column {
@@ -89,44 +97,37 @@
       }
       .left, .right {
         width: 25%;
-        /* Solo para modo prueba */
-        background-color: red;
+        /* Solo para modo prueba
+        background-color: red;*/
       }
       .middle {
         width: 50%;
-        /* Solo para modo prueba */
-        background: yellow;
-      }
-      .main:after {
-        clear: both;
+        /* Solo para modo prueba
+        background: yellow;*/
       }
 /* Estilo de Post */
       .capsulapost {
-        clear: both;
-        margin-top: 5px;
         margin-bottom: 5px;
-        /*width: 100%;*/
-        /* Solo para modo prueba */
-        background: lightblue;
+        /* Solo para modo prueba
+        background: lightblue;*/
       }
       .capsulapost a {
         color: black;
         text-decoration: none;
-        background-color: blue;
+        /* Solo para modo prueba
+        background-color: blue;*/
       }
-      .fechanoticia {
+      .tiponoticia {
         font-size: 2em;
-        width: 100%;
-        /* Si escribo display inline, el contenedor .capsulapost aplica sus margenes
-        correctamente, pero todo lo demás se descuadra */
         display: inline;
-        /* Solo para modo prueba */
-        background: lightgreen;
+        /* Solo para modo prueba
+        background: lightgreen;*/
       }
       .imgpost {
         float: right;
         margin: 5px 5% 5px 5%;
         width: 90%;
+        max-width: 400px;
         box-shadow: 9px 11px 5px -5px rgba(0,0,0,0.75);
       }
       .titulopost { /* Enlace a noticia */
@@ -134,9 +135,12 @@
         display: block;
       }
       .titulopost:hover {
-        color: blue;
-        /* Solo para modo prueba */
-        color: yellow;
+        font-weight: bold;
+        /* Solo para modo prueba
+        color: yellow;*/
+      }
+      .video {
+        padding: 5px 5px 0px 5px;
       }
       .leyenda {
         font-size: 0.9em;
@@ -153,12 +157,61 @@
       .clear {
         clear: both;
       }
+/* Panel derecho */
+      .capsulalastpost {
+        margin: 1px 10px 0px 15px;
+        /* Solo para modo prueba
+        background: darkgreen;*/
+      }
+      .importante {
+        text-align: center;
+      }
+      .importante > p{
+        font: 40px 'Clicker Script', cursive;
+        display: inline;
+      }
+      /* Esto hubiera sido más facil dando un estilo a cada vínculo, pero me gusta complicarme ;) */
+      li[post-tipo] a {
+        text-decoration: none;
+        font-size: 20px;
+      }
+      li[post-tipo] > a:first-child {
+        font-weight: bold;
+      }
+      [post-tipo] > a:first-child:hover {
+        font-weight: lighter;
+      }
+      [post-tipo="SER"] > a:first-child, [post-tipo|="SER"] {
+        color: darkblue;
+      }
+      [post-tipo="MOD"] > a:first-child, [post-tipo|="MOD"] {
+        color: darkgreen;
+      }
+      [post-tipo="TEC"] > a:first-child, [post-tipo|="TEC"] {
+        color: chocolate;
+      }
+      [post-tipo="SER"] > a:first-child:hover {
+        color: blue;
+      }
+      [post-tipo="MOD"] > a:first-child:hover {
+        color: green;
+      }
+      [post-tipo="TEC"] > a:first-child:hover {
+        color: orange;
+      }
+      [post-tipo] > a:nth-child(2)  {
+        color: black;
+      }
+      [post-tipo] > a:nth-child(2):hover  {
+        font-weight: bold;
+      }
 /* Pie de página */
       .footer {
-        clear: both;
+        font-family: 'ZCOOL XiaoWei', serif;
         text-align: center;
-        background: white;
         margin-top: 20px;
+        /* Solo para modo prueba
+        background: white;*/
       }
     </style>
     <meta charset="utf-8">
@@ -170,54 +223,141 @@
         <img class="logo" src="IMG/logo.png" alt="Logo">
         <p class="titulo"><b>Blog de prueba</b></p>
       </div>
-      <div class="main">
+      <div class="clear main">
         <div class="left column">
+          <div class="importante">
+            <p><u><b>Menú</b></p></u>
+          </div>
             <div class="capsulabtn">
               <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
-              <div class="boton">ENLACE
-              </div>
+              <div class="boton"><a href="#tecnologia">Noticias tecnología</a></div>
             </div>
             <div class="capsulabtn">
               <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
-              <div class="boton">ENLACE
-              </div>
+              <div class="boton"><a href="#moda">Noticias moda</a></div>
             </div>
             <div class="capsulabtn">
               <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
-              <div class="boton">ENLACE
-              </div>
-            </div>
-            <div class="capsulabtn">
-              <img class="imgbotones" src="IMG/botonrojo.png" alt="Botón Rojo">
-              <div class="boton">ENLACE
-              </div>
+              <div class="boton"><a href="#series">Noticias series</a></div>
             </div>
         </div>
         <div class="middle column">
-          <div class="capsulapost">
-            <div class="">
-              <p class="fechanoticia">Noticia de hoy</p>
+            <div class="capsulapost">
+              <a name="tecnologia"></a>
+              <div class="">
+                <p class="tiponoticia"><u>Noticias: Tecnología</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el WiFi de la universidad porque profesores se quejaban que las aplicaciones de clase no iban bien.</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost1.jpg" alt="Aula de universidad">
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
             </div>
-            <div class="middle column">
-              <a class="titulopost" href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el WiFi de la universidad porque profesores se quejaban que las aplicaciones de clase no iban bien.</a>
+            <div class="capsulapost">
+              <div class="">
+                <p class="tiponoticia"><u>Noticias: Tecnología</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="https://computerhoy.com/noticias/tecnologia/cambia-contrasena-instagram-facebook-empleados-han-visto-392683">Cambia tu contraseña de Instagram y Facebook: los empleados la han visto</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost4.jpg" alt="Foto ojos con logo facebook">
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="https://www.computerhoy.com">computerhoy.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
             </div>
-            <div class="middle column">
-              <img class="imgpost" src="IMG/imgpost1.jpg" alt="Aula de universidad">
+            <div class="capsulapost">
+              <a name="moda"></a>
+              <div class="">
+                <p class="tiponoticia"><u>Noticias: Moda</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="http://www.eluniversal.com/estilo-de-vida/35946/daniela-benaim-la-moda-como-objeto-de-desecho-ha-producido-mucho-dano-en-el-mundo">Daniela Benaim: “La moda como objeto de desecho ha producido mucho daño en el mundo”</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost2.jpg" alt="Foto cara de modelo">
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="http://www.eluniversal.com">www.eluniversal.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
             </div>
-            <div class="clear">
-              <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
-              <a href="#inicio">[&#8679; Arriba]</a>
+            <div class="capsulapost">
+              <div class="">
+                <a name="tecnologia"></a>
+                <p class="tiponoticia"><u>Noticias: Moda</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="https://www.clarin.com/entremujeres/moda/accesorios-tendencia-moda-otono-2019_0_Gcme6oAGJ.html">Los accesorios que serán tendencia en la moda otoño 2019</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost3.jpg" alt="Foto de bolso">
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="https://www.clarin.com">www.clarin.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
+            </div>
+            <div class="capsulapost">
+              <a name="series"></a>
+              <div class="">
+                <p class="tiponoticia"><u>Noticias: Series</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="https://www.fotogramas.es/series-tv-noticias/a26895903/juego-de-tronos-temporada-8-poster/">La nueva y última temporada de 'Juego de Tronos' está a la vuelta de la esquina, y os llevamos avisando meses. De hecho, HBO nos lleva avisando años que lo vamos a pasar mal. Que lo vamos a pasar muy mal. Poco a poco, y con vistas a allanar el camino hacia el estreno el próximo 14 de abril, HBO nos está dando, eso sí con cuentagotas, migajas de lo que nos vamos a encontrar.</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost5.jpg" alt="Poster Juego de tronos: Ojos de dragón">
+              </div>
+              <div class="clear video">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/pnc9sdDjNXs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="https://www.fotogramas.es">www.fotogramas.es</a> y <a href="https://www.youtube.com">www.youtube.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
+            </div>
+            <div class="capsulapost">
+              <div class="">
+                <p class="tiponoticia"><u>Noticias: Series</u></p>
+              </div>
+              <div class="middle column">
+                <a class="titulopost" href="https://www.xataka.com/streaming/netflix-estrenos-abril-2019">Los estrenos de Netflix en abril 2019: más de 110 entre series, películas y documentales</a>
+              </div>
+              <div class="middle column">
+                <img class="imgpost" src="IMG/imgpost6.jpg" alt="Foto ojos con logo facebook">
+              </div>
+              <div class="clear">
+                <p class="leyenda">Información de web <a href="https://www.xataka.com">www.xataka.com</a></p>
+                <a href="#inicio">[&#8679; Arriba]</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="right column">
-          <div class="modulo">
-            LATERAL 2
+          <div class="right column">
+            <div class="clear capsulalastpost">
+              <div class="importante">
+                <p><u><b>Últimos posts</b></p></u>
+              </div>
+              <ul>
+                <li post-tipo="TEC"><a href="#tecnologia">Tecnología: </a><a href="https://www.xataka.com/streaming/prohiben-acceder-a-netflix-wifi-universidad-porque-profesores-se-quejaban-que-aplicaciones-clase-no-iban-bien">Prohíben acceder a Netflix con el wifi...</a></li>
+                <li post-tipo="MOD"><a href="#moda">Moda: </a><a href="http://www.eluniversal.com/estilo-de-vida/35946/daniela-benaim-la-moda-como-objeto-de-desecho-ha-producido-mucho-dano-en-el-mundo">Daniela Benaim: La moda como objeto de desecho...</a></li>
+                <li post-tipo="TEC"><a href="#tecnologia">Tecnología: </a><a href="https://computerhoy.com/noticias/tecnologia/cambia-contrasena-instagram-facebook-empleados-han-visto-392683">Cambia tu contraseña de Instagram y facebook...</a></li>
+                <li post-tipo="SER"><a href="#series">Series: </a><a href="https://www.fotogramas.es/series-tv-noticias/a26895903/juego-de-tronos-temporada-8-poster/">La nueva y última temporada de Juego de tronos...</a></li>
+                <li post-tipo="MOD"><a href="#moda">Moda: </a><a href="https://www.clarin.com/entremujeres/moda/accesorios-tendencia-moda-otono-2019_0_Gcme6oAGJ.html">Los accesorios que serán tendencia en la moda...</a></li>
+                <li post-tipo="SER"><a href="#series">Series: </a><a href="https://www.xataka.com/streaming/netflix-estrenos-abril-2019">Los estrenos de Netflix en abril de 2019...</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-
-      <div class="footer">
+      <div class="clear footer">
         <p>RPB &copy; Práctica final - Pre-Work &reg;</p>
       </div>
   </body>
